@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Love World 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hearts">
+    <span>💖</span><span>💗</span><span>💕</span><span>💘</span><span>💞</span>
+    <span>💖</span><span>💗</span><span>💕</span><span>💘</span><span>💞</span>
+    <span>✨</span><span>✨</span><span>✨</span><span>✨</span>
+  </div>
+
+  <div class="home-box fade-in">
+
+    <h1>Welcome Malak 💕</h1>
+    <p>This is our little world 💖</p>
+
+    <div class="love-counter">
+      <h2>⏳ Our Love Timer 💞</h2>
+      <p id="counterText">Loading...</p>
+    </div>
+
+    <div class="btn-group">
+      <button onclick="openSection('hear')">🎵 Hear Me</button>
+      <button onclick="openSection('view')">📸 View Me</button>
+      <button onclick="openSection('read')">📖 Read Me</button>
+    </div>
+
+    <!-- HEAR ME -->
+    <div id="hear" class="section hidden">
+      <h2>🎶 Songs for you 💗</h2>
+      <p>These songs remind me of you ❤️</p>
+
+      <audio id="player" controls>
+        <source id="audioSource" src="songs/song1.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="song-buttons">
+        <button onclick="playSong(1)">▶ El Donia Hoss - Amir Eid</button>
+        <button onclick="playSong(2)">▶ Ded El Kod - Ziad Zaza</button>
+      </div>
+    </div>
+
+    <!-- VIEW ME -->
+    <div id="view" class="section hidden">
+      <h2>📸 Our Memories 💞</h2>
+
+      <div class="gallery">
+
+        <div class="card">
+          <img src="photos/photo1.jpg" alt="Memory 1">
+          <p>
+            it was our first date b3d ma etsal7na , kan special day w awl youm a7s enk sam7tyny w kan start l dates kteer awy benna w lesa aktr
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="photos/photo2.jpg" alt="Memory 2">
+          <p>
+            Da kan aktr youm momez lena youm msh hnsah mn aktr el marat elly 7sytk fiha mabsota awy awyyy kda w m3a enna kona t3banen ella enna kona mabsoten b kol la7za l7d ma rw7na el bet
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="photos/photo3.jpg" alt="Memory 3">
+          <p>
+            w da kan out last date fi sana 7ob kamla f3ln kan new experience enna ntklm w e7ba bardanen awy kda w al3ab w penguins 🐧 kol la7za kant 7elwa w kan date momtaz nkhtm byh el sana
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- READ ME -->
+    <div id="read" class="section hidden">
+      <h2>💌 رسالة ليكي</h2>
+
+      <div class="letter">
+        <p>
+كدا خلصنا سنة حب زيادة بينا و انا واثق ان شاءالله انها مش الاخيرة خالص و لسا اللى جى اكتر كانت سنة مميزة و متاكد انها هتفضل الابرز و الاثبت فى دماغى عشان اولها كان صدمة كبيرة ليا و ليكى و بالمناسبة دى حابب فى ختام السنة اعتذرلك عن اولها انا عمرى ما شوفتها خيانة ولا فكرت اصلا اخونك لان زى ما قولتلك قبل كدا انتى الشخص الاقرب الى قلبى انا اسف لو كنت زعلتك اوى ساعتها و حسستك انى وحش او مش مناسب و حابب برضو اقول شكرا انك اديتيتى فرصة و بوعدك انك هتشوفى انك مغلطتيش فى دا كانت سنة جميلة جدا عملنا ذكريات كتيرة و مهمة كلها حاجات جديدة يمكن تكون دى ابرز سنة فى حياتنا سوا فعلا يمكن تكون الاخيرة لينا بشكلنا كدا الجاية فى جامعة و غالبا مش سوا بس احنا اللى بينا يربطنا ببعض كبير حتى لو فى دول مختلفة و دايما هكون معاكى و فى ضهرك دايما عشان انا فعلا بحبك يا اجمل حاجة فى حياتى❤️❤️
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- POPUP -->
+  <div id="popup" class="popup">
+    <div class="popup-box">
+      <h2>💖 I Love You Malak 💖</h2>
+      <p>You are my favorite person in this world 😭💗</p>
+      <button onclick="closePopup()">Okayyy 💞</button>
+    </div>
+  </div>
+
+  <script>
+    // Popup appears when page loads
+    window.onload = function () {
+      setTimeout(() => {
+        document.getElementById("popup").style.display = "flex";
+      }, 1000);
+    };
+
+    // Popup close FIXED for iPhone
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    // Section open
+    function openSection(sectionId) {
+      document.getElementById("hear").classList.add("hidden");
+      document.getElementById("view").classList.add("hidden");
+      document.getElementById("read").classList.add("hidden");
+
+      document.getElementById(sectionId).classList.remove("hidden");
+
+      createHeartExplosion();
+    }
+
+    // Songs
+    function playSong(songNumber) {
+      const player = document.getElementById("player");
+      const audioSource = document.getElementById("audioSource");
+
+      if(songNumber === 1){
+        audioSource.src = "songs/song1.mp3";
+      } else {
+        audioSource.src = "songs/song2.mp3";
+      }
+
+      player.load();
+      player.play();
+    }
+
+    // Heart explosion
+    function createHeartExplosion() {
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart-pop";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = Math.random() * 100 + "vh";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 1000);
+      }
+    }
+
+    // Love counter
+    function updateCounter() {
+      const startDate = new Date("2024-02-08T00:00:00"); 
+      const now = new Date();
+
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+      document.getElementById("counterText").innerHTML =
+        `We have been together for <b>${days}</b> days 💕<br>
+         <b>${hours}</b> hours and <b>${minutes}</b> minutes 💗`;
+    }
+
+    setInterval(updateCounter, 1000);
+    updateCounter();
+  </script>
+
+</body>
+</html>

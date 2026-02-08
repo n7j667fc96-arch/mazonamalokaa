@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Login 💗</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hearts">
+    <span>💖</span><span>💗</span><span>💕</span><span>💘</span><span>💞</span>
+    <span>💖</span><span>💗</span><span>💕</span><span>💘</span><span>💞</span>
+    <span>✨</span><span>✨</span><span>✨</span><span>✨</span>
+  </div>
+
+  <div class="login-box fade-in">
+    <h1>Welcome My Love 💕</h1>
+    <p>Login to enter our cute world 💖</p>
+
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username 💌" required>
+
+      <div class="password-box">
+        <input type="password" id="password" placeholder="Password 🔒" required>
+        <button type="button" class="show-pass" onclick="togglePassword()">👁</button>
+      </div>
+
+      <button type="submit" class="main-btn">Enter 💗</button>
+
+      <p id="errorMsg"></p>
+    </form>
+  </div>
+
+  <script>
+    const correctUsername = "14112007";
+    const correctPassword = "080324";
+
+    function togglePassword() {
+      const passInput = document.getElementById("password");
+      passInput.type = (passInput.type === "password") ? "text" : "password";
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if(user === correctUsername && pass === correctPassword){
+        window.location.href = "home.html";
+      } else {
+        errorMsg.textContent = "Wrong username or password 😭💔";
+      }
+    });
+  </script>
+
+</body>
+</html>

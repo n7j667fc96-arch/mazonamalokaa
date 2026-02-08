@@ -1,0 +1,281 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive;
+  background: linear-gradient(to right, #ffb6c1, #ffc0cb, #ffe4e1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Fade In */
+.fade-in {
+  animation: fadeIn 1.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Login Box */
+.login-box {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 45px;
+  width: 350px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0px 0px 30px rgba(255, 20, 147, 0.4);
+  border: 3px solid pink;
+  z-index: 2;
+  position: relative;
+}
+
+/* Home Box */
+.home-box {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 50px;
+  width: 85%;
+  max-width: 850px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0px 0px 30px rgba(255, 20, 147, 0.4);
+  border: 3px solid pink;
+  z-index: 2;
+  position: relative;
+  margin: 50px 0;
+}
+
+h1 {
+  color: #ff1493;
+  font-size: 35px;
+  margin-bottom: 10px;
+  text-shadow: 0px 0px 8px pink;
+}
+
+h2 {
+  color: #ff1493;
+  margin-top: 25px;
+}
+
+p {
+  color: #d63384;
+  font-size: 16px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid pink;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  background: #fff0f5;
+}
+
+input:focus {
+  border-color: #ff1493;
+  box-shadow: 0 0 10px #ff69b4;
+}
+
+/* Password box */
+.password-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.show-pass {
+  background: #ff69b4;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Buttons */
+button {
+  padding: 12px;
+  background: #ff69b4;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 8px;
+  box-shadow: 0px 0px 10px rgba(255, 20, 147, 0.3);
+}
+
+button:hover {
+  background: #ff1493;
+  transform: scale(1.08);
+}
+
+.btn-group {
+  margin-top: 20px;
+}
+
+.main-btn {
+  width: 100%;
+}
+
+/* Sections */
+.section {
+  margin-top: 30px;
+  padding: 25px;
+  background: #fff0f5;
+  border-radius: 20px;
+  border: 2px dashed hotpink;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Love counter */
+.love-counter {
+  background: white;
+  border: 2px solid pink;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.3);
+  margin-top: 20px;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 18px;
+  border: 2px solid pink;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.3);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid #ff69b4;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Letter */
+.letter {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  border: 2px solid pink;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  font-size: 17px;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.3);
+}
+
+/* Error */
+#errorMsg {
+  margin-top: 15px;
+  font-size: 14px;
+  color: red;
+}
+
+/* Hearts */
+.hearts span {
+  position: absolute;
+  font-size: 28px;
+  animation: float 7s infinite;
+  opacity: 0.85;
+}
+
+.hearts span:nth-child(1) { left: 5%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 15%; animation-delay: 1s; }
+.hearts span:nth-child(3) { left: 25%; animation-delay: 2s; }
+.hearts span:nth-child(4) { left: 35%; animation-delay: 3s; }
+.hearts span:nth-child(5) { left: 45%; animation-delay: 4s; }
+.hearts span:nth-child(6) { left: 55%; animation-delay: 0.5s; }
+.hearts span:nth-child(7) { left: 65%; animation-delay: 1.5s; }
+.hearts span:nth-child(8) { left: 75%; animation-delay: 2.5s; }
+.hearts span:nth-child(9) { left: 85%; animation-delay: 3.5s; }
+.hearts span:nth-child(10) { left: 95%; animation-delay: 4.5s; }
+.hearts span:nth-child(11) { left: 10%; animation-delay: 5s; }
+.hearts span:nth-child(12) { left: 30%; animation-delay: 1.2s; }
+.hearts span:nth-child(13) { left: 50%; animation-delay: 2.2s; }
+.hearts span:nth-child(14) { left: 70%; animation-delay: 3.2s; }
+
+@keyframes float {
+  0% {
+    top: 110%;
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    top: -10%;
+    transform: scale(0.7);
+  }
+}
+
+/* Heart Explosion */
+.heart-pop {
+  position: absolute;
+  font-size: 30px;
+  animation: pop 1s ease-out;
+  z-index: 10;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 182, 193, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.popup-box {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  border: 3px solid hotpink;
+  text-align: center;
+  width: 80%;
+  max-width: 450px;
+  box-shadow: 0px 0px 20px rgba(255, 20, 147, 0.5);
+  animation: fadeIn 0.7s ease-in-out;
+}
